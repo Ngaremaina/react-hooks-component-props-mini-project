@@ -1,24 +1,24 @@
 import React from "react";
 
-function Article(props){
-    const defaultDate = () => {
-        const date = props.date?.toString() || new Date().toString();
-        console.log(date)
-        return <small>{date}</small>;
+function Article({minutes, title, date = "January 1, 1970", preview}){
+    // const defaultDate = () => {
+    //     const date = props.date?.toString() || new Date().toString();
+    //     console.log(date)
+    //     return <small>{date}</small>;
        
-    }
+    //  }
     return(
         <article>
-            <h3>{props.title}</h3>
-            {defaultDate()}
-            <p>{props.preview}</p>
+            <h3>{title}</h3>
+            <small>
+                {date} | {minutes}
+            </small>
+           
+            <p>{preview}</p>
         </article>
     )
 
 }
 
-Article.defaultProps = {
-    date: new Date(),
-  };
 
 export default Article
