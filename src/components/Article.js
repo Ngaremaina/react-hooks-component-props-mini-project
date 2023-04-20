@@ -2,8 +2,9 @@ import React from "react";
 
 function Article(props){
     const defaultDate = () => {
-        const date = props.date || new Date();
-        return <small>{date.toString()}</small>
+        const date = props.date?.toString() || new Date.now().toString();
+        console.log(date)
+        return <small>{date}</small>;
        
     }
     return(
@@ -15,5 +16,9 @@ function Article(props){
     )
 
 }
+
+Article.defaultProps = {
+    date: new Date(),
+  };
 
 export default Article
