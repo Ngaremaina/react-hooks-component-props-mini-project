@@ -2,7 +2,7 @@ import React from "react";
 
 function Article(props){
     const defaultDate = () => {
-        const date = props.date?.toString() || new Date.now().toString();
+        const date = props.date?.toString() || new Date().toString();
         console.log(date)
         return <small>{date}</small>;
        
